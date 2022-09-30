@@ -1,0 +1,13 @@
+# We ignore every file that may accumulate build size
+.git
+.gitignore
+
+# if you using running your decoupled frontend, with 
+# your django project you should ignore
+# node_modules, and build
+
+LICENSE
+
+# if using local environments,
+# Ignore them here.
+
