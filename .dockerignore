@@ -1,6 +1,17 @@
 # We ignore every file that may accumulate build size
-.git
-.gitignore
+**/.git
+**/.gitignore
+**/.vscode
+**/coverage
+**/.env
+**/.aws
+**/.ssh
+Dockerfile
+README.md
+docker-compose.yml
+**/.DS_Store
+**/venv
+**/env
 
 # if you using running your decoupled frontend, with 
 # your django project you should ignore
@@ -10,4 +21,3 @@ LICENSE
 
 # if using local environments,
 # Ignore them here.
-

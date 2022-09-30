@@ -47,10 +47,27 @@ WORKDIR /app
 COPY requirements/dev-requirements.txt .
 
 # Install dependencies
-RUN pip install -r dev-requirements.txt
+# We should cache our dependencies in a production grade
+# project, you could change the below line to
+#
+# ```
+# RUN pip install 
+# ```
+# However, this is repository is targeted to complete beginners
+# I would create an advanced starter template for Production Django
+# projects later.
+RUN pip install --no-cache-dir -r ./dev-requirements.txt
 
 # Copy your source folder into your root build
 # Careful here buddy,you don't want to accidentally
 # increase build size with unneccessary files.
 # Hence, the need for .dockerignore
+# 
+# The use of,
+#
+# ```
+# COPY . .
+# ```
+# does not follow best practices. However, for the
+# sake of starters, we would keep it at this.
 COPY . .
